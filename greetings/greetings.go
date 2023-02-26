@@ -14,8 +14,8 @@ func Hello(name string) (string, error) {
         return name, errors.New("empty name")
     }
     // Create a message using a random format.
-    // this is correct :: --> message := fmt.Sprintf(randomFormat(), name)
-    message := fmt.Sprint(randomFormat())
+    message := fmt.Sprintf(randomFormat(), name)
+    // this is WRONG : message := fmt.Sprint(randomFormat())
     return message, nil
 }
 
