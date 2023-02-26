@@ -12,7 +12,9 @@ jobs:
           go-version: 1.19
       - name: Test
         run: |
-            go test -v greetings 
+            cd greetings
+            go test -v ./greetings 
       - name: Build
         run: |
-            go build -v hello
+            cd ./hello
+            go build -v 
