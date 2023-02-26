@@ -14,9 +14,8 @@ func Hello(name string) (string, error) {
         return name, errors.New("empty name")
     }
     // Create a message using a random format.
-    // the correct one:: message := fmt.Sprintf(randomFormat(), name)
+    // this is correct :: --> message := fmt.Sprintf(randomFormat(), name)
     message := fmt.Sprint(randomFormat())
-
     return message, nil
 }
 
@@ -39,7 +38,7 @@ func Hellos(names []string) (map[string]string, error) {
     return messages, nil
 }
 
-// init sets initial values for variables used in the function.
+// Init sets initial values for variables used in the function.
 func init() {
     rand.Seed(time.Now().UnixNano())
 }
@@ -54,8 +53,6 @@ func randomFormat() string {
         "Hail, %v! Well met!",
     }
 
-    // Return a randomly selected message format by specifying
-    // a random index for the slice of formats.
+    // Return one of the message formats selected at random.
     return formats[rand.Intn(len(formats))]
 }
-
